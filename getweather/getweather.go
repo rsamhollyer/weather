@@ -32,7 +32,11 @@ func GetWeather(weatherUrl string) (Weather, error) {
 		return weatherObject, err
 	}
 
-	json.Unmarshal(responseData, &weatherObject)
+	err = json.Unmarshal(responseData, &weatherObject)
+
+	if err != nil {
+		return weatherObject, err
+	}
 
 	return weatherObject, nil
 }
