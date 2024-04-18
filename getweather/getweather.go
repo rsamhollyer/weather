@@ -25,6 +25,7 @@ func GetWeather(weatherUrl string) (Weather, error) {
 	if err != nil {
 		return weatherObject, err
 	}
+	defer response.Body.Close()
 
 	responseData, err := io.ReadAll(response.Body)
 	if err != nil {
