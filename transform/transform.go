@@ -5,14 +5,14 @@ import (
 	"weather/getweather"
 )
 
-func Transform(weatherObject getweather.Weather) string {
-	weatherIcon := transformIcon(weatherObject.WeatherIcon[0])
+func Transform(weatherObject *getweather.Weather) string {
+	weatherIcon := transformIcon(&weatherObject.WeatherIcon[0])
 	temperature := fmt.Sprintf("%.0f", weatherObject.Main.Temp)
 	return weatherIcon + "  " + temperature + "°F"
 
 }
 
-func transformIcon(weaterIcon getweather.WeatherIcon) string {
+func transformIcon(weaterIcon *getweather.WeatherIcon) string {
 	weatherMap := map[string]string{
 		"01d": "",
 		"01n": "",

@@ -21,6 +21,6 @@ func main() {
 		fmt.Print(error.Error())
 		os.Exit(1)
 	}
-	weatherString := transform.Transform(weatherObject)
+	weatherString := transform.Transform(&weatherObject)
 	fmt.Println(weatherString)
 }
