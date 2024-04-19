@@ -1,23 +1,23 @@
-// package config
+package config
 
-// type Config struct {
-// 	ApiKey string
-// 	CityId string
-// 	Units  string
-// }
+type Config struct {
+	apiKey string
+	cityId string
+	units  string
+}
 
-// func NewConfig() Config {
-// 	return Config{"APIKEY", "CITY-ID", "imperial"}
-// }
+func NewConfig() *Config {
+	return &Config{"APIKEY", "CITYID", "imperial|metric|standard"}
+}
 
-// func (c Config) GetApiKey() string {
-// 	return c.ApiKey
-// }
+func (c *Config) GetApiKey() string {
+	return c.apiKey
+}
 
-// func (c Config) GetCityId() string {
-// 	return c.CityId
-// }
+func (c *Config) GetCityId() string {
+	return c.cityId
+}
 
-// func (c Config) GetUnits() string {
-// 	return c.Units
-// }
+func (c *Config) GetUnits() string {
+	return c.units
+}
